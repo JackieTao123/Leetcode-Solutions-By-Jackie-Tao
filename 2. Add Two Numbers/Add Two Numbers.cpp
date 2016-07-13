@@ -5,12 +5,11 @@ using std::stack;
 int main()
 {
 	ListNode *L1 = new ListNode(1);
-	//L1->next = new ListNode(8);
-	/*
-	L1->next->next = new ListNode(3);*/
-	//L1->next->next->next = nullptr;
-	//L1->next->next = nullptr;
-
+	//L1->next = new ListNode(7);
+	//L1->next->next = new ListNode(3);
+	/*L1->next->next->next = nullptr;
+	L1->next->next = nullptr;
+*/
 	ListNode *L2 = new ListNode(9);
 	L2->next = new ListNode(9);
 	//L2->next->next = new ListNode(4);

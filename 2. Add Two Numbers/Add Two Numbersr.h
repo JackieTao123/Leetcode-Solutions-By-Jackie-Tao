@@ -22,7 +22,7 @@ public:
 class Solution{
 public:
 	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-		unsigned len1 = 0, len2=0;
+		unsigned len1 = 0, len2 = 0;
 		ListNode *p = l1;
 		//Get the length of LinkNode list l1;
 		while (p != nullptr)
@@ -40,7 +40,7 @@ public:
 
 		//p always points to the longer LinkedList.
 		//q points to the shorter one.
-		if (len1 >=len2)
+		if (len1 >= len2)
 		{
 			p = l1;
 			q = l2;
@@ -63,28 +63,46 @@ public:
 					carry = true;
 				}
 				else
-					p->val = (p->val + q->val) % 10 + 1;
+					p->val = (p->val + q->val)%10+ 1;
 			}
 			else if (carry)
-			{
-				p->val = p->val + q->val + 1;
-				carry = false;
+			{	
+				if (p->val + q->val + 1 == 10)
+				{
+					p->val = (p->val + q->val + 1) % 10;
+					carry = true;
+				}
+				else
+				{
+					p->val = p->val + q->val + 1;
+					carry = false;
+				}
 			}
 			else
 				p->val += q->val;
 			if (q->next == nullptr)
 			{
-				if (p->next == nullptr&&carry)
-					p->next = new ListNode(1);
-				else if (p->next != nullptr&&carry)
+				while (p->next!=nullptr&&carry)
 				{
-				}
-			else
-			{
-				p = p->next;
-				q = q->next;
+					if ((p->next->val + 1) == 10)
+					{
+						p->next->val = (p->next->val + 1) % 10;
+						carry = true;
+						//p->next = new ListNode(1);
+						p = p->next;
+					}
+					else
+					{
+						p->next->val += 1;
+						carry = false;
+					}
+				}//end of while
 			}
-		}
+			if (p->next==nullptr&&carry)
+				p->next = new ListNode(1);
+			p = p->next;
+			q = q->next;
+		}//end of while
 		return result;
 	}
 };

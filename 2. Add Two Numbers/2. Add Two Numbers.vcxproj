@@ -78,6 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Add Two Numbers 2.h" />
     <ClInclude Include="Add Two Numbersr.h" />
   </ItemGroup>
   <ItemGroup>
