@@ -80,6 +80,9 @@
   <ItemGroup>
     <ClInclude Include="Longest Substring Without Repeating Characters.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Longest Substring Without Repeating Characters.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
