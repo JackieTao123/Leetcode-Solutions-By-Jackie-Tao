@@ -2,7 +2,7 @@
 
 int main()
 {
-	std::string test("abcabcbb");
+	std::string test("dvdf");
 	Solution s;
 	std::cout << s.lengthOfLongestSubstring(test) << std::endl;
 	system("pause");
